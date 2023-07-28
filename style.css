@@ -1,0 +1,67 @@
+@font-face {
+    src: url(assets/ubuntu.ttf);
+    font-family: ubuntu;
+}
+
+@font-face {
+    src: url(assets/raleway.ttf);
+    font-family: raleway;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --purple: #341063;
+    --yellow: #B2AC2A;
+    --gradient: linear-gradient(90deg, rgba(52,16,99,1) 0%, rgba(178,172,42,1) 100%);;
+    --white-100: rgba(221, 221, 221, 1);
+    --white-75: rgba(208, 196, 224, 0.75);
+    --white-50: rgba(208, 196, 224, 0.5);
+    --white-25: rgba(208, 196, 224, 0.25);
+    --white-10: rgba(208, 196, 224, 0.1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: raleway;
+}
+
+h1 {
+    font-size: clamp(45, 90, 180);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: clamp(32, 64, 128);
+    font-weight: 400;
+}
+
+h3 {
+    font-size: clamp(23, 45, 90);
+    font-weight: 800;
+}
+
+h4 {
+    font-size: clamp(16, 32, 64);
+    font-weight: 400;
+}
+
+h5 {
+    font-size: clamp(11, 23, 45);
+    font-weight: 800;
+}
+
+h6 {
+    font-size: clamp(8, 16, 32);
+    font-weight: 800;
+}
+
+p, span {
+    font-family: ubuntu;
+    font-size: clamp(8, 16, 32);
+}
+
+
