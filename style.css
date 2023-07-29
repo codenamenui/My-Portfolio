@@ -1,3 +1,4 @@
+/* Fonts */
 @font-face {
     src: url(assets/ubuntu.ttf);
     font-family: ubuntu;
@@ -15,6 +16,14 @@
 }
 
 :root {
+    --font-size-h1: clamp(45px, 8vw, 90px);
+    --font-size-h2: clamp(32px, 6vw, 64px);
+    --font-size-h3: clamp(23px, 4vw, 46px);
+    --font-size-h4: clamp(16px, 3vw, 32px);
+    --font-size-h5: clamp(11px, 2vw, 22px);
+    --font-size-h6: clamp(8px, 1.5vw, 16px);
+    --font-size-p: clamp(8px, 1.5vw, 16px);
+
     --purple: #341063;
     --yellow: #B2AC2A;
     --gradient: linear-gradient(90deg, rgba(52,16,99,1) 0%, rgba(178,172,42,1) 100%);;
@@ -30,38 +39,74 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: clamp(45, 90, 180);
+    font-size: var(--font-size-h1);
     font-weight: 800;
 }
 
 h2 {
-    font-size: clamp(32, 64, 128);
+    font-size: var(--font-size-h2);
     font-weight: 400;
 }
 
 h3 {
-    font-size: clamp(23, 45, 90);
+    font-size: var(--font-size-h3);
     font-weight: 800;
 }
 
 h4 {
-    font-size: clamp(16, 32, 64);
+    font-size: var(--font-size-h4);
     font-weight: 400;
 }
 
 h5 {
-    font-size: clamp(11, 23, 45);
+    font-size: var(--font-size-h5);
     font-weight: 800;
 }
 
 h6 {
-    font-size: clamp(8, 16, 32);
+    font-size: var(--font-size-h6);
     font-weight: 800;
 }
 
 p, span {
     font-family: ubuntu;
-    font-size: clamp(8, 16, 32);
+    font-size: var(--font-size-p);
 }
 
+body {
+    background-color: var(--purple);
+    color: var(--white-100);
+}
 
+nav {
+    width: 100vw;
+    height: 75px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(16px, 5vw, 64px);
+}
+
+nav h6 {
+    width: calc(100%/9);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 300ms linear;
+}
+
+.diamond-nav {
+    display: inline-flex;
+    gap: 0px;
+    transition: gap 300ms linear;
+}
+
+#left-arrow, #right-arrow {
+    transition: opacity 300ms linear;
+    opacity: 0;
+}
+
+.diamond-nav svg {
+    fill: var(--white-100);
+    transform: scale(1.5, 2);
+}
