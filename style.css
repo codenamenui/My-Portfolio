@@ -97,8 +97,13 @@ nav h6 {
 
 .diamond-nav {
     display: inline-flex;
-    gap: 0px;
+    gap: 0;
     transition: gap 300ms linear;
+}
+
+#filledDia {
+    opacity: 0;
+    transition: opacity 200ms linear;
 }
 
 #left-arrow, #right-arrow {
