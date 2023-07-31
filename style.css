@@ -85,20 +85,28 @@ nav {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: clamp(16px, 5vw, 64px);
+    position: relative;
+/*    gap: clamp(16px, 5vw, 64px);*/    
 }
 
-nav h6 {
+nav a {
     width: calc(100%/9);
     text-align: center;
     opacity: 0;
-    transition: opacity 300ms linear;
+    transition: opacity 300ms linear, transform 300ms linear;
+    position: absolute;
+}
+
+nav a:focus, nav a:target, nav a:active, nav a:visited, nav a:link, nav a:hover {
+    text-decoration: inherit;
+    color: inherit;
 }
 
 .diamond-nav {
     display: inline-flex;
     gap: 0;
     transition: gap 300ms linear;
+    z-index: 10;
 }
 
 #filledDia {
