@@ -86,7 +86,6 @@ nav {
     justify-content: center;
     align-items: center;
     position: relative;
-/*    gap: clamp(16px, 5vw, 64px);*/    
 }
 
 nav a {
@@ -95,6 +94,36 @@ nav a {
     opacity: 0;
     transition: opacity 300ms linear, transform 300ms linear;
     position: absolute;
+    user-select: none;
+    z-index: 1;
+}
+
+nav a h6 {
+    display: inline-block;
+    content: "";
+    z-index: 2;
+    position: relative;
+}
+
+nav a:nth-child(1) h6::after, nav a:nth-child(2) h6::after,
+nav a:nth-child(4) h6::after, nav a:nth-child(5) h6::after  {
+    content: " ";
+    position: absolute;
+    overflow: hidden;
+    display: block;
+    width: 0%;
+    border-top: 2px solid transparent;
+    transition: border-top 40ms linear, left 200ms linear, width 300ms ease-in-out;
+}
+
+.hover-line::after {
+    border-top: 2px solid var(--white-100) !important;
+    width: 100% !important;
+}
+
+.unhover-line::after {
+    border-top: 2px solid var(--white-100) !important;
+    width: 0% !important;
 }
 
 nav a:focus, nav a:target, nav a:active, nav a:visited, nav a:link, nav a:hover {
@@ -121,5 +150,5 @@ nav a:focus, nav a:target, nav a:active, nav a:visited, nav a:link, nav a:hover 
 
 .diamond-nav svg {
     fill: var(--white-100);
-    transform: scale(1.5, 2);
+    transform: scale(1.5, 2); 
 }
