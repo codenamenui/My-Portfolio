@@ -3,21 +3,20 @@ let leftArrow = document.getElementById("left-arrow");
 let diamond = document.querySelector("#diamond");
 let diaPath = document.querySelector("#filledDia");
 let diaNav = document.getElementsByClassName("diamond-nav")[0];
-let navText = document.querySelectorAll("nav a");
-let navH6 = document.querySelectorAll("nav a h6");
+let navText = document.querySelectorAll("nav a h6");
 let openNav = true;
 
-for (let i = 0; i < navText.length; i++) {
-    navH6[i].classList.toggle('hover-line');
-    navText[i].addEventListener("mouseenter", () => {
-        navH6[i].classList.toggle('hover-line')
-        navH6[i].classList.toggle('unhover-line');
-    });
-    navText[i].addEventListener("mouseleave", () => {
-        navH6[i].classList.toggle('hover-line');
-        navH6[i].classList.toggle('unhover-line');
-    });
-}
+// for (let i = 0; i < navText.length; i++) {
+//     navH6[i].classList.toggle('hover-line');
+//     navText[i].addEventListener("mouseenter", () => {
+//         navH6[i].classList.toggle('hover-line')
+//         navH6[i].classList.toggle('unhover-line');
+//     });
+//     navText[i].addEventListener("mouseleave", () => {
+//         navH6[i].classList.toggle('hover-line');
+//         navH6[i].classList.toggle('unhover-line');
+//     });
+// }
 
 diamond.addEventListener('click', () => {
     if (!openNav) 
@@ -56,7 +55,8 @@ diamond.addEventListener('click', () => {
 });
 
 diaNav.addEventListener("mouseenter", () => {
-    diaPath.style.opacity = "1";
+    if (!openNav)
+        diaPath.style.opacity = "1";
 });
 
 diaNav.addEventListener("mouseleave", () => {
